@@ -1,12 +1,26 @@
 {
-  "version":2,
+  "version": 2,
   "builds": [
-    { "src": "*.js", "use": "@vercel/node"}
+    {
+      "src": "src/index.ts",
+      "use": "@vercel/node",
+      "config": { "includeFiles": ["dist/**"] }
+    }
   ],
   "routes": [
     {
-      "src": "/(.*)",
-      "dest"; "/"
+      "src": "/api/(.*)",
+      "dest": "/dist/index.js"
     }
-  ]
+  ],
+  "env": {
+    "MONGODB_CONNECTION_STRING": "@mongodb_connection_string",
+    "CLOUDINARY_CLOUD_NAME": "@cloudinary_cloud_name",
+    "CLOUDINARY_API_KEY": "@cloudinary_api_key",
+    "CLOUDINARY_API_SECRET": "@cloudinary_api_secret",
+    "FRONTEND_URL": "@frontend_url",
+    "STRIPE_API_KEY": "@stripe_api_key",
+    "STRIPE_WEBHOOK_SECRET": "@stripe_webhook_secret"
+  },
+  "buildCommand": "npm run build"
 }
