@@ -1,17 +1,13 @@
 {
   "compilerOptions": {
     "outDir": "./dist",
-    /* Visit https://aka.ms/tsconfig to read more about this file */
-
-    /* Language and Environment */
+    "rootDir": "./src",  // Add this line
     "target": "es2016",
     "module": "commonjs",
     "esModuleInterop": true,
     "forceConsistentCasingInFileNames": true,
     "strict": true,
     "skipLibCheck": true,
-
-    /* Modules */
     "baseUrl": ".",
     "paths": {
       "@/*": ["./src/*"]
