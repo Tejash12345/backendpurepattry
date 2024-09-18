@@ -1,5 +1,5 @@
 import { Navigate, Route, Routes } from "react-router-dom";
-import Layout from "./layouts/layout";
+import Layout from "./layouts/Layout"; // Ensure correct casing
 import HomePage from "./pages/HomePage";
 import AuthCallbackPage from "./pages/AuthCallbackPage";
 import UserProfilePage from "./pages/UserProfilePage";
@@ -37,6 +37,7 @@ const AppRoutes = () => {
           </Layout>
         }
       />
+      
       <Route element={<ProtectedRoute />}>
         <Route
           path="/order-status"
