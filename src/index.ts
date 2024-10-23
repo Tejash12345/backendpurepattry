@@ -21,8 +21,9 @@ const app = express();
 
 // CORS setup
 app.use(cors({
-  origin: "https://frontendpa-epw7f76qv-tejesh-kumars-projects.vercel.app", // Your frontend URL
+  origin: "https://frontendpa.vercel.app", // Your frontend URL
 }));
+
 
 app.use(express.json());
 
