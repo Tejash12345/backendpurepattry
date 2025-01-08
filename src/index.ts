@@ -7,7 +7,10 @@ import { v2 as cloudinary } from "cloudinary";
 import myRestaurantRoute from "./routes/MyRestaurantRoute";
 import restaurantRoute from "./routes/RestaurantRoute";
 import orderRoute from "./routes/OrderRoute";
-
+import { VercelRequest, VercelResponse } from '@vercel/node';
+export default (req: VercelRequest, res: VercelResponse) => {
+  res.status(200).json({ message: "API is running!" });
+};
 mongoose
   .connect(process.env.MONGODB_CONNECTION_STRING as string)
   .then(() => console.log("Connected to database!"));
